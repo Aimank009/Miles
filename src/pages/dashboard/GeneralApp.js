@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import Conversation from "../../components/conversation";
 
 const GeneralApp = () => {
-  const theme=useTheme();
+  const theme = useTheme();
   return (
     <Stack direction={"row"} sx={{ width: "100%" }}>
       <Chat />
@@ -14,12 +14,15 @@ const GeneralApp = () => {
         sx={{
           height: "100%",
           width: "calc(101vw - 420px)",
-          backgroundColor:theme.palette.mode === "light" ? "#fff":theme.palette.background.default,
+          backgroundColor:
+            theme.palette.mode === "light"
+              ? "#F0F4FA"
+              : theme.palette.background.paper,
         }}
       >
         {/*Conversation*/}
 
-        <Conversation/>
+        <Conversation />
       </Box>
     </Stack>
   );
