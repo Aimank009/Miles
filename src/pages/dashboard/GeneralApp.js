@@ -3,6 +3,7 @@ import Chat from "./Chat";
 import { Box, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Conversation from "../../components/conversation";
+import Contact from "../../components/Contact";
 
 const GeneralApp = () => {
   const theme = useTheme();
@@ -13,7 +14,7 @@ const GeneralApp = () => {
       <Box
         sx={{
           height: "100%",
-          width: "calc(101vw - 420px)",
+          width: "calc(101vw - 740px)",
           backgroundColor:
             theme.palette.mode === "light"
               ? "#F0F4FA"
@@ -24,6 +25,7 @@ const GeneralApp = () => {
 
         <Conversation />
       </Box>
+      <Contact/>
     </Stack>
   );
 };
