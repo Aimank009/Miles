@@ -18,6 +18,9 @@ import { faker } from "@faker-js/faker";
 import { useSearchParams } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
 
+import { ToggleSidebar } from "../../Redux/slices/app";
+import { useDispatch } from "react-redux";
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#44b700",
@@ -66,6 +69,7 @@ const ChatHeader = () => {
   const isMobile = useResponsive("between", "md", "xs", "sm");
   const [searchParams, setSearchParams] = useSearchParams();
   const theme = useTheme();
+  const dispatch=useDispatch();
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     React.useState(null);
@@ -94,13 +98,10 @@ const ChatHeader = () => {
         justifyContent="space-between"
       >
         <Stack
-          onClick={() => {
-            searchParams.set("open", true);
-            setSearchParams(searchParams);
-          }}
-          spacing={2}
-          direction="row"
-        >
+            
+            spacing={2}
+            direction="row"
+          >
           <Box>
             <StyledBadge
               overlap="circular"
